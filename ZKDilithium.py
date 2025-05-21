@@ -83,15 +83,15 @@ all_params_unif = [
     # ("DilithiumBB_3", DilithiumBB_3),
     # ("DilithiumBB_4", DilithiumBB_4),
     # ("DilithiumBB_5", DilithiumBB_5),
-    # ("DilithiumBB_6", DilithiumBB_6),
-    ("DilithiumBB_7", DilithiumBB_7),
+    ("DilithiumBB_6", DilithiumBB_6),
+    # ("DilithiumBB_7", DilithiumBB_7),
     # ("DilithiumM31_1", DilithiumM31_1),
     # ("DilithiumM31_2", DilithiumM31_2),
     # ("DilithiumM31_3", DilithiumM31_3),
     # ("DilithiumM31_4", DilithiumM31_4),
     # ("DilithiumM31_5", DilithiumM31_5),
-    # ("DilithiumM31_6", DilithiumM31_6),
-    ("DilithiumM31_7", DilithiumM31_7),
+    ("DilithiumM31_6", DilithiumM31_6),
+    # ("DilithiumM31_7", DilithiumM31_7),
 
 ]
 
