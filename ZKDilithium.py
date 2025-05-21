@@ -39,33 +39,60 @@ class UniformDilithiumParameterSet(object):
 #     return sqrt(B2)
 
 n = 256
-q_dilithium = 8380417
-q_DilithiumZK = 2013265921  # babybear
+q = 8380417
+q_BB = 2**31 - 2**27 + 1  # babybear
+q_M31 = 2**31 - 1  # Mersenne31
 
 Dilithium = UniformDilithiumParameterSet(
-    n, 4, 4, 2**17, (q_dilithium-1)/88, 39, q_dilithium, 2, pkdrop=13)
-DilithiumZK1 = UniformDilithiumParameterSet(
-    n, 4, 4, 2**17, (q_dilithium-1)/88, 39, q_DilithiumZK, 2, pkdrop=13)
-DilithiumZK2 = UniformDilithiumParameterSet(
-    n, 4, 4, 2**17, (q_dilithium-1)/88, 39, q_DilithiumZK, 10, pkdrop=13)
-DilithiumZK3 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**17, (q_dilithium-1)/88, 39, q_DilithiumZK, 2, pkdrop=13)
-DilithiumZK4 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**17, (q_dilithium-1)/88, 39, q_DilithiumZK, 4, pkdrop=13)
-DilithiumZK5 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**17, (q_DilithiumZK-1)/2**10, 39, q_DilithiumZK, 4, pkdrop=13)
-DilithiumZK6 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**17, (q_DilithiumZK-1)/2**11, 39, q_DilithiumZK, 4, pkdrop=13)
+    n, 4, 4, 2**17, (q-1)/88, 39, q, 2, pkdrop=13)
+DilithiumBB_1 = UniformDilithiumParameterSet(
+    n, 4, 4, 2**17, (q-1)/88, 39, q_BB, 2, pkdrop=13)
+DilithiumBB_2 = UniformDilithiumParameterSet(
+    n, 4, 4, 2**17, (q-1)/88, 39, q_BB, 10, pkdrop=13)
+DilithiumBB_3 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q-1)/88, 39, q_BB, 2, pkdrop=13)
+DilithiumBB_4 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q-1)/88, 39, q_BB, 4, pkdrop=13)
+DilithiumBB_5 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q_BB-1)/2**10, 39, q_BB, 4, pkdrop=13)
+DilithiumBB_6 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q_BB-1)/2**11, 39, q_BB, 4, pkdrop=13)
+DilithiumBB_7 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**18, (q_BB-1)/2**11, 39, q_BB, 4, pkdrop=13)
+
+DilithiumM31_1 = UniformDilithiumParameterSet(
+    n, 4, 4, 2**17, (q-1)/88, 39, q_M31, 2, pkdrop=13)
+DilithiumM31_2 = UniformDilithiumParameterSet(
+    n, 4, 4, 2**17, (q-1)/88, 39, q_M31, 10, pkdrop=13)
+DilithiumM31_3 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q-1)/88, 39, q_M31, 2, pkdrop=13)
+DilithiumM31_4 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q-1)/88, 39, q_M31, 4, pkdrop=13)
+DilithiumM31_5 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q_M31-1)/(3*7), 39, q_M31, 4, pkdrop=13)
+DilithiumM31_6 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q_M31-1)/(3*7*151), 39, q_M31, 4, pkdrop=13)
+DilithiumM31_7 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**18, (q_M31-1)/(3*7*151), 39, q_M31, 4, pkdrop=13)
 
 
 all_params_unif = [
     ("Dilithium", Dilithium),
-    # ("DilithiumZK1", DilithiumZK1),
-    # ("DilithiumZK2", DilithiumZK2),
-    # ("DilithiumZK3", DilithiumZK3),
-    # ("DilithiumZK4", DilithiumZK4),
-    # ("DilithiumZK5", DilithiumZK5),
-    ("DilithiumZK6", DilithiumZK6),
+    # ("DilithiumBB_1", DilithiumBB_1),
+    # ("DilithiumBB_2", DilithiumBB_2),
+    # ("DilithiumBB_3", DilithiumBB_3),
+    # ("DilithiumBB_4", DilithiumBB_4),
+    # ("DilithiumBB_5", DilithiumBB_5),
+    # ("DilithiumBB_6", DilithiumBB_6),
+    ("DilithiumBB_7", DilithiumBB_7),
+    # ("DilithiumM31_1", DilithiumM31_1),
+    # ("DilithiumM31_2", DilithiumM31_2),
+    # ("DilithiumM31_3", DilithiumM31_3),
+    # ("DilithiumM31_4", DilithiumM31_4),
+    # ("DilithiumM31_5", DilithiumM31_5),
+    # ("DilithiumM31_6", DilithiumM31_6),
+    ("DilithiumM31_7", DilithiumM31_7),
+
 ]
 
 all_params = all_params_unif
