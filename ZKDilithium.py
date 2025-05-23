@@ -41,6 +41,7 @@ class UniformDilithiumParameterSet(object):
 n = 256
 q = 8380417
 q_BB = 2**31 - 2**27 + 1  # babybear
+q_KB = 2**31 - 2**24 + 1  # koalabear
 q_M31 = 2**31 - 1  # Mersenne31
 
 Dilithium = UniformDilithiumParameterSet(
@@ -57,8 +58,6 @@ DilithiumBB_5 = UniformDilithiumParameterSet(
     n, 4, 5, 2**17, (q_BB-1)/2**10, 39, q_BB, 4, pkdrop=13)
 DilithiumBB_6 = UniformDilithiumParameterSet(
     n, 4, 5, 2**17, (q_BB-1)/2**11, 39, q_BB, 4, pkdrop=13)
-DilithiumBB_7 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**18, (q_BB-1)/2**11, 39, q_BB, 4, pkdrop=13)
 
 DilithiumM31_1 = UniformDilithiumParameterSet(
     n, 4, 4, 2**17, (q-1)/88, 39, q_M31, 2, pkdrop=13)
@@ -69,11 +68,22 @@ DilithiumM31_3 = UniformDilithiumParameterSet(
 DilithiumM31_4 = UniformDilithiumParameterSet(
     n, 4, 5, 2**17, (q-1)/88, 39, q_M31, 4, pkdrop=13)
 DilithiumM31_5 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**17, (q_M31-1)/(3*7), 39, q_M31, 4, pkdrop=13)
+    n, 4, 5, 2**17, (q_M31-1)/(2*7), 39, q_M31, 4, pkdrop=13)
 DilithiumM31_6 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**17, (q_M31-1)/(3*7*151), 39, q_M31, 4, pkdrop=13)
-DilithiumM31_7 = UniformDilithiumParameterSet(
-    n, 4, 5, 2**18, (q_M31-1)/(3*7*151), 39, q_M31, 4, pkdrop=13)
+    n, 4, 5, 2**17, (q_M31-1)/(2*7*151), 39, q_M31, 4, pkdrop=13)
+
+DilithiumKB_1 = UniformDilithiumParameterSet(
+    n, 4, 4, 2**17, (q-1)/88, 39, q_KB, 2, pkdrop=13)
+DilithiumKB_2 = UniformDilithiumParameterSet(
+    n, 4, 4, 2**17, (q-1)/88, 39, q_KB, 10, pkdrop=13)
+DilithiumKB_3 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q-1)/88, 39, q_KB, 2, pkdrop=13)
+DilithiumKB_4 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q-1)/88, 39, q_KB, 4, pkdrop=13)
+DilithiumKB_5 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q_KB-1)/2**10, 39, q_KB, 4, pkdrop=13)
+DilithiumKB_6 = UniformDilithiumParameterSet(
+    n, 4, 5, 2**17, (q_KB-1)/2**11, 39, q_KB, 4, pkdrop=13)
 
 
 all_params_unif = [
@@ -84,15 +94,18 @@ all_params_unif = [
     # ("DilithiumBB_4", DilithiumBB_4),
     # ("DilithiumBB_5", DilithiumBB_5),
     ("DilithiumBB_6", DilithiumBB_6),
-    # ("DilithiumBB_7", DilithiumBB_7),
     # ("DilithiumM31_1", DilithiumM31_1),
     # ("DilithiumM31_2", DilithiumM31_2),
     # ("DilithiumM31_3", DilithiumM31_3),
     # ("DilithiumM31_4", DilithiumM31_4),
     # ("DilithiumM31_5", DilithiumM31_5),
     ("DilithiumM31_6", DilithiumM31_6),
-    # ("DilithiumM31_7", DilithiumM31_7),
-
+    # ("DilithiumKB_1", DilithiumKB_1),
+    # ("DilithiumKB_2", DilithiumKB_2),
+    # ("DilithiumKB_3", DilithiumKB_3),
+    # ("DilithiumKB_4", DilithiumKB_4),
+    # ("DilithiumKB_5", DilithiumKB_5),
+    ("DilithiumKB_6", DilithiumKB_6),
 ]
 
 all_params = all_params_unif
